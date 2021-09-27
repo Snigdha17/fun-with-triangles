@@ -5,20 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculate Hypotenuse</title>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <nav>
-      <a href="index.html">Is Triangle?</a>
-      <a href="hypotenuse.html">Calculate Hypotenuse</a>
-      <a href="quiz.html">Triangle Quiz</a>
+      <ul>
+        <li><a href="index.html">Is Triangle?</a></li>
+        <li>
+          <a a class="active" href="hypotenuse.html">Calculate Hypotenuse</a>
+        </li>
+        <li><a href="quiz.html">Triangle Quiz</a></li>
+        <li><a href="triangleArea.html">Calculate Area</a></li>
+      </ul>
     </nav>
-    <h1>Calculate Hypotenuse</h1>
-    <label>side1 = </label>
-    <input type="number" class="side-input" />
-    <label>side2 = </label>
-    <input type="number" class="side-input" />
-    <button id="hypotenuse-btn">Calculate Hypotenuse</button>
-    <div id="output"></div>
+    <div id="container">
+      <h1>Calculate Hypotenuse</h1>
+      <label
+        >side1(in cm)
+        <input type="number" class="side-input" />
+      </label>
+      <label
+        >side2(in cm)
+        <input type="number" class="side-input" />
+      </label>
+      <button id="hypotenuse-btn">Calculate Hypotenuse</button>
+      <div id="output"></div>
+    </div>
     <script src="hypotenuse.js"></script>
   </body>
 </html>

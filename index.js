@@ -1,12 +1,23 @@
-const inputs = document.querySelectorAll(".angle-input");
 const isTriangleBtn = document.querySelector("#is-triangle-btn");
 const outputArea = document.querySelector("#output");
 
 function isTriangle() {
+  var inputs = document.querySelectorAll(".angle-input");
+
+  clearMessage();
+
+  const input1 = inputs[0].value;
+  const input2 = inputs[1].value;
+  const input3 = inputs[2].value;
+
+  if (!validateInputs(input1, input2, input3)) {
+    outputArea.innerText = "Please enter all inputs";
+    return;
+  }
   const angleSum = calculateSumOfAngles(
-    Number(inputs[0].value),
-    Number(inputs[1].value),
-    Number(inputs[2].value)
+    Number(input1),
+    Number(input2),
+    Number(input3)
   );
 
   if (angleSum === 180) {
@@ -22,3 +33,11 @@ function calculateSumOfAngles(angle1, angle2, angle3) {
 }
 
 isTriangleBtn.addEventListener("click", isTriangle);
+
+function validateInputs(input1, input2, input3) {
+  return input1 && input2 && input3;
+}
+
+function clearMessage() {
+  outputArea.innerText = "";
+}

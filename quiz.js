@@ -1,4 +1,3 @@
-const quizForm = document.querySelector(".quiz-form");
 const submitButton = document.querySelector("#submit-answer-btn");
 const rightAnswers = ["45", "right angled"];
 const outputArea = document.querySelector("#output");
@@ -6,6 +5,8 @@ const outputArea = document.querySelector("#output");
 submitButton.addEventListener("click", checkAnswers);
 
 function checkAnswers() {
+  var quizForm = document.querySelector(".quiz-form");
+  clearMessage();
   let score = 0;
   let index = 0;
   const formResults = new FormData(quizForm);
@@ -20,4 +21,8 @@ function checkAnswers() {
   }
 
   outputArea.innerText = "Your score is: " + score;
+}
+
+function clearMessage() {
+  outputArea.innerText = "";
 }
