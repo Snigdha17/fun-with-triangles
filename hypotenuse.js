@@ -12,7 +12,6 @@ function calculateHypotenuse() {
   const input2 = sides[1].value;
 
   if (!validateInputs(input1, input2)) {
-    outputArea.innerText = "Please enter all inputs";
     return;
   }
 
@@ -27,7 +26,15 @@ function calculateSumOfSquares(a, b) {
 }
 
 function validateInputs(input1, input2) {
-  return input1 && input2;
+  if (!input1 || !input2) {
+    outputArea.innerText = "Please enter all inputs";
+    return false;
+  } else if (input1 < 0 || input2 < 0) {
+    outputArea.innerText =
+      "Triangle sides cannot be negative. Please enter positive values for all sides";
+    return false;
+  }
+  return true;
 }
 
 function clearMessage() {

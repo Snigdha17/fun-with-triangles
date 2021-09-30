@@ -11,7 +11,6 @@ function isTriangle() {
   const input3 = inputs[2].value;
 
   if (!validateInputs(input1, input2, input3)) {
-    outputArea.innerText = "Please enter all inputs";
     return;
   }
   const angleSum = calculateSumOfAngles(
@@ -35,7 +34,15 @@ function calculateSumOfAngles(angle1, angle2, angle3) {
 isTriangleBtn.addEventListener("click", isTriangle);
 
 function validateInputs(input1, input2, input3) {
-  return input1 && input2 && input3;
+  if (!input1 || !input2 || !input3) {
+    outputArea.innerText = "Please enter all inputs";
+    return false;
+  } else if (input1 < 0 || input2 < 0 || input3 < 0) {
+    outputArea.innerText =
+      "Triangle angles cannot be negative. Please enter positive values for all angles";
+    return false;
+  }
+  return true;
 }
 
 function clearMessage() {
