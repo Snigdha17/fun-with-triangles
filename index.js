@@ -37,9 +37,9 @@ function validateInputs(input1, input2, input3) {
   if (!input1 || !input2 || !input3) {
     outputArea.innerText = "Please enter all inputs";
     return false;
-  } else if (input1 < 0 || input2 < 0 || input3 < 0) {
+  } else if (input1 <= 0 || input2 <= 0 || input3 <= 0) {
     outputArea.innerText =
-      "Triangle angles cannot be negative. Please enter positive values for all angles";
+      "Triangle angles cannot be 0 or negative. Please enter positive values for all angles";
     return false;
   }
   return true;
